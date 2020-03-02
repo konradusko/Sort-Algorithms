@@ -4,7 +4,8 @@ class ArrayGe {
             j, k, i, x;
         for (i = 1; i < sizeOfArray + 1; i++) {
             arr.push({
-                "value": i
+                "value": i,
+                "color":"black"
             })
         }
         for (x = arr.length - 1; x > 0; x--) {

@@ -1,16 +1,31 @@
 class Game {
     constructor() {
-    
+        this.numbOfAr =100;
+        this.canvas;
+        this.ar;
+        this.draw;
+        this.sort;
     }
     main() {
-        let numbOfAr = 25;
-        const ar = ArrayGe.getArray(numbOfAr);
-        console.log(ar)
-        const canvas = new Canvas(ar);
-        const draw = new Draw(canvas,ar,100/numbOfAr);
-        draw.drawArray();
+        this.ar = ArrayGe.getArray(this.numbOfAr);
+        this.canvas = new Canvas(this.ar);
+        this.draw = new Draw(this.canvas, this.ar, 100 / this.numbOfAr);
+        this.draw.drawArray();
+    }
+    buttons() {
+        const insertionsort = document.getElementById("Insertionsort").addEventListener("click", e => {
+
+        });
+        const bubbleSort = document.getElementById("BubbleSort").addEventListener("click", e => {
+            this.sort = new Bubblesort(this.canvas, this.ar, 100 / this.numbOfAr);
+            this.sort.sort();
+        });
+        const getArr = document.getElementById("GetArray").addEventListener("click", e => {
+            this.numbOfAr = 30;
+            this.main();
+        });
     }
 }
-
 const game = new Game();
 game.main();
+game.buttons();

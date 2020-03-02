@@ -11,10 +11,15 @@ class Draw {
     drawArray() {
         let num = this.sizeOfSpace/2;
         for (let i = 0; i < this.arr.length; i++) {
-             console.log(Math.floor((this.arr[i].value/100)*this.height))
+            this.ctx.fillStyle = this.arr[i].color;
             this.ctx.fillRect(num, 0, this.sizeOfLine, Math.floor((this.arr[i].value/100)*this.height) *this.x );
+            this.arr[i].x = num;
             num += this.sizeOfLine + this.sizeOfSpace;
-
         }
     }
+    clearCanvas(){
+        this.ctx.clearRect(0,0,this.width,this.height);
+    }
+
+
 }
