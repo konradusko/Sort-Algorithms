@@ -1,6 +1,6 @@
 class Game {
     constructor() {
-        this.numbOfAr =100;
+        this.numbOfAr = 900;
         this.canvas;
         this.ar;
         this.draw;
@@ -14,7 +14,8 @@ class Game {
     }
     buttons() {
         const insertionsort = document.getElementById("Insertionsort").addEventListener("click", e => {
-
+            this.sort = new Insertionsort(this.canvas, this.ar, 100 / this.numbOfAr);
+            this.sort.sort();
         });
         const bubbleSort = document.getElementById("BubbleSort").addEventListener("click", e => {
             this.sort = new Bubblesort(this.canvas, this.ar, 100 / this.numbOfAr);

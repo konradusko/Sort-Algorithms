@@ -7,7 +7,7 @@ class Bubblesort extends Draw {
         this.verified = 0;
     }
     sort() {
-        const sort = setInterval(() => {
+        const goSort = setInterval(() => {
             this.verified += 1;
             for (let i = this.arr.length - 1; i > 0; i--) {
                 if (this.arr[i - 1] != undefined && this.arr[i - 1].value > this.arr[i].value) {
@@ -24,9 +24,11 @@ class Bubblesort extends Draw {
                 }
                 this.clearCanvas();
                 this.drawArray();
+
+                
             }
             if (this.count == 0) {
-                clearInterval(sort)
+                clearInterval(goSort)
                 this.tmp = 0;
                 console.log("Elementy zostały zamienione: " + this.exchange + " razy!");
                 console.log("Tablica została sprawdzona:" + this.verified + " razy!");
@@ -43,6 +45,6 @@ class Bubblesort extends Draw {
             } else {
                 this.count = 0;
             }
-        }, 5);
+        }, 250);
     }
 }
